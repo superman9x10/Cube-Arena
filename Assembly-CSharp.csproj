@@ -53,6 +53,7 @@
     <UnityVersion>2020.3.24f1</UnityVersion>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="Assets\Scripts\Spawner\Spawner.cs" />
     <Compile Include="Assets\Scripts\PlayerBullet.cs" />
     <Compile Include="Assets\Scripts\Enemy\EnemyType1\EnemyGun.cs" />
     <Compile Include="Assets\Scripts\Enemy\EnemyType1\Gunner.cs" />
@@ -60,7 +61,7 @@
     <Compile Include="Assets\Scripts\PlayerController.cs" />
     <Compile Include="Assets\Scripts\Enemy\Turret\TurretController.cs" />
     <Compile Include="Assets\Scripts\GunController.cs" />
-    <Compile Include="Assets\Scripts\Spawner\Spawner.cs" />
+    <Compile Include="Assets\Scripts\Test.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">

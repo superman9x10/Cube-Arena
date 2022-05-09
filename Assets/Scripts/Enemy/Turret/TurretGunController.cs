@@ -13,6 +13,7 @@ public class TurretGunController : MonoBehaviour
     private float timer = 0.5f;
     private PlayerController playerController;
 
+
     private void Start()
     {
         playerController = FindObjectOfType<PlayerController>();
@@ -62,7 +63,7 @@ public class TurretGunController : MonoBehaviour
             if (timer <= 0)
             {
                 isHitPlayer = false;
-                timer = 0.5f;
+                timer = 0.2f;
             }
         }
         

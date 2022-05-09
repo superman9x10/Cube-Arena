@@ -11,7 +11,8 @@ public class GunController : MonoBehaviour
     public float fireRate;
     public float canShootAfter;
     private int swapGun;
-    
+
+    public AudioSource shootingSound;
 
     private void Update()
     {
@@ -24,6 +25,7 @@ public class GunController : MonoBehaviour
         {
             if (Time.time > canShootAfter)
             {
+                shootingSound.Play();
                 if (swapGun == 0)
                 {
                     swapGun = 1;

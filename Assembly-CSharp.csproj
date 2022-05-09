@@ -61,7 +61,7 @@
     <Compile Include="Assets\Scripts\PlayerController.cs" />
     <Compile Include="Assets\Scripts\Enemy\Turret\TurretController.cs" />
     <Compile Include="Assets\Scripts\GunController.cs" />
-    <Compile Include="Assets\Scripts\Test.cs" />
+    <Compile Include="Assets\Scripts\UI\HealthBar.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">

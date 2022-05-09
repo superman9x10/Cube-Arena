@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 [System.Serializable]
 public class Wave
@@ -18,17 +19,28 @@ public class enemy
 
 public class Spawner : MonoBehaviour
 {
-    public List<Wave> wavesList = new List<Wave>();
     public GameObject groundScale;
     
-    public float timeToNextWave;
-
+    //Create waves and enemies List
+    public List<Wave> wavesList = new List<Wave>();
     public List<GameObject> enemies = new List<GameObject>();
 
+    //Time bettween 2 wave
+    public float timeToNextWave;
+    private float timer;
+
+    //Countdown UI
+    public GameObject timeToNextWaveManager;
+    public Text coutingText;
+    private bool isStartCout = true;
+
+    //the wave is playing
     private int curWave = 0;
+
+
     private void Start()
     {
-        
+        timer = timeToNextWave;
     }
     private void Update()
     {
@@ -36,9 +48,10 @@ public class Spawner : MonoBehaviour
     }
     void spawnEnemy()
     {
+
         checkEndGame();
 
-        if(timeToNextWave <= 0)
+        if(timer <= 0)
         {
             if (enemies.Count != wavesList[curWave].totalEnemy)
             {
@@ -49,14 +62,17 @@ public class Spawner : MonoBehaviour
                 if (GameObject.FindWithTag("Enemy") == null)
                 {
                     curWave++;
-                    timeToNextWave = 3f;
+                    timer = timeToNextWave;
                     enemies.Clear();
+                    isStartCout = true;
                 }
             }
         }
         else
         {
-            timeToNextWave -= Time.deltaTime;
+            StartCoroutine(startCouting());
+            coutingText.text = timer.ToString("0.000");
+            timer -= Time.deltaTime;
         }
         
     }
@@ -91,6 +107,18 @@ public class Spawner : MonoBehaviour
         if (curWave == wavesList.Count)
         {
             Debug.Log("END GAME");
+            
+        }
+    }
+
+    IEnumerator startCouting()
+    {
+        if (isStartCout)
+        {
+            isStartCout = false;
+            timeToNextWaveManager.SetActive(true);
+            yield return new WaitForSeconds(timeToNextWave);
+            timeToNextWaveManager.SetActive(false);
         }
     }
 }

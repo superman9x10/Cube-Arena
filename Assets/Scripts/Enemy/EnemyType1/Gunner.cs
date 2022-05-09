@@ -10,15 +10,23 @@ public class Gunner : MonoBehaviour
     private Vector3 moveDir;
     private PlayerController playerController;
 
-    public int hp;
-    public float moveSpeed;
+    [SerializeField] int hp;
+    [SerializeField] float moveSpeed;
     public float timer;
+
+
+    public int getHP()
+    {
+        return this.hp;
+    }
+    //public AudioSource audioSource;
     private void Start()
     {
         playerPos = GameObject.FindWithTag("Player").GetComponent<Transform>();
         groundScale = GameObject.FindWithTag("Ground");
         playerController = FindObjectOfType<PlayerController>();
         rb = GetComponent<Rigidbody>();
+        
     }
     private void Update()
     {
@@ -104,15 +112,15 @@ public class Gunner : MonoBehaviour
     }
     private void OnTriggerEnter(Collider other)
     {
-        if(other.tag == "PlayerBullet")
+        if (other.tag == "PlayerBullet")
         {
+            Destroy(other.gameObject);
+            
             hp -= 10;
-            if(hp <= 0)
+            if (hp <= 0)
             {
                 Destroy(gameObject);
             }
-            Debug.Log("Enemy Hit");
-            Destroy(other.gameObject);
         }
     }
 }

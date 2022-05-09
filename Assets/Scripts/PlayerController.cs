@@ -8,7 +8,12 @@ public class PlayerController : MonoBehaviour
     [SerializeField] float moveSpeed;
     [SerializeField] int hp;
 
+    private GameObject groundScale;
+    private float h, v;
+    private Vector3 dirMovement;
+    private Rigidbody m_rb;
     public bool isAlive;
+    
     public int getPlayerHP()
     {
         return this.hp;
@@ -17,12 +22,8 @@ public class PlayerController : MonoBehaviour
     {
         this.hp -= damage;
     }
-    
-    
-    private GameObject groundScale;
-    private float h, v;
-    private Vector3 dirMovement;
-    private Rigidbody m_rb;
+
+    public HealthBar healthBar;
 
     private void Awake()
     {
@@ -31,7 +32,7 @@ public class PlayerController : MonoBehaviour
 
     private void Start()
     {
-        
+        healthBar.setMaxHealth(hp);
         groundScale = GameObject.FindWithTag("Ground");
         m_rb = GetComponent<Rigidbody>();   
     }
@@ -39,7 +40,8 @@ public class PlayerController : MonoBehaviour
     {
         getInput();
         lookProcess();
-        playerDead();
+        isPlayerDead();
+        healthBar.setHealth(hp);
     }
     private void FixedUpdate()
     {
@@ -48,7 +50,6 @@ public class PlayerController : MonoBehaviour
 
     void Movement ()
     {
-        //transform.position += dirMovement * moveSpeed * Time.deltaTime;
         m_rb.velocity = dirMovement * moveSpeed;
         limitMoving();
     }
@@ -103,17 +104,19 @@ public class PlayerController : MonoBehaviour
     {
         if(other.tag == "EnemyBullet")
         {
-            hp -= 10;
+            damagePlayer(10);
+            //healthBar.setHealth(hp);
+            //playerDead();
             Destroy(other.gameObject);
         }
     }
 
-    void playerDead()
+    void isPlayerDead()
     {
         if(this.hp <= 0)
         {
-            //isAlive = false;
-            //Destroy(this.gameObject);
+            isAlive = false;
+            Destroy(this.gameObject);
             Debug.Log("Player Dead");
         }
     }

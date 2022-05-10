@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
+    public static PlayerController instance;
+
     //Movement
     [SerializeField] float moveSpeed;
     [SerializeField] int hp;
@@ -13,6 +15,8 @@ public class PlayerController : MonoBehaviour
     private Vector3 dirMovement;
     private Rigidbody m_rb;
     public bool isAlive;
+
+    public GameObject explosionFx;
     
     public int getPlayerHP()
     {
@@ -28,6 +32,10 @@ public class PlayerController : MonoBehaviour
     private void Awake()
     {
         isAlive = true;
+        if (instance == null)
+        {
+            instance = this;
+        }
     }
 
     private void Start()
@@ -100,6 +108,18 @@ public class PlayerController : MonoBehaviour
         transform.position = temp;
     }
 
+    void isPlayerDead()
+    {
+        if (this.hp <= 0 && isAlive)
+        {
+            isAlive = false;
+            GameObject explo = Instantiate(explosionFx, transform.position, Quaternion.identity);
+            Destroy(explo, 2f);
+            Destroy(this.gameObject);
+        }
+    }
+
+
     private void OnTriggerEnter(Collider other)
     {
         if(other.tag == "EnemyBullet")
@@ -111,13 +131,4 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-    void isPlayerDead()
-    {
-        if(this.hp <= 0)
-        {
-            isAlive = false;
-            Destroy(this.gameObject);
-            Debug.Log("Player Dead");
-        }
-    }
 }

@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class GunController : MonoBehaviour
 {
+    public static GunController instance;
+
     public Transform firePoint1;
     public Transform firePoint2;
     public GameObject bullet;
@@ -14,6 +16,13 @@ public class GunController : MonoBehaviour
 
     public AudioSource shootingSound;
 
+    private void Awake()
+    {
+        if(instance == null)
+        {
+            instance = this;
+        }
+    }
     private void Update()
     {
         shoot();

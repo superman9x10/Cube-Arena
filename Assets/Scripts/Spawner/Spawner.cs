@@ -19,6 +19,8 @@ public class enemy
 
 public class Spawner : MonoBehaviour
 {
+    public static Spawner instance;
+    
     public GameObject groundScale;
     
     //Create waves and enemies List
@@ -37,9 +39,16 @@ public class Spawner : MonoBehaviour
     //the wave is playing
     private int curWave = 0;
 
-
+    public int getCurWave()
+    {
+        return this.curWave;
+    }
     private void Start()
     {
+        if(instance == null)
+        {
+            instance = this;
+        }
         timer = timeToNextWave;
     }
     private void Update()
@@ -71,7 +80,7 @@ public class Spawner : MonoBehaviour
         else
         {
             StartCoroutine(startCouting());
-            coutingText.text = timer.ToString("0.000");
+            coutingText.text = timer.ToString("0.00");
             timer -= Time.deltaTime;
         }
         

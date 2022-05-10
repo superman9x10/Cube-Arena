@@ -254,8 +254,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1.3013414, y: 1, z: 1.1270741}
-  m_Center: {x: -0.055924892, y: 0, z: -0.011241722}
+  m_Size: {x: 1.447656, y: 1, z: 1.1504691}
+  m_Center: {x: -0.03353372, y: 0, z: 0.0004551649}
 --- !u!54 &4383482991115223279
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -287,7 +287,7 @@ MonoBehaviour:
   hp: 50
   moveSpeed: 50
   timer: 0
-  soundManager: {fileID: 806802456484328709}
+  explosionFx: {fileID: 8996008984512165151, guid: 502cada8571709843ba829d13416023d, type: 3}
 --- !u!1 &4383482990344016547
 GameObject:
   m_ObjectHideFlags: 0

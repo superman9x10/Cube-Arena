@@ -864,8 +864,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 150
-  hp: 200
+  hp: 500
   isAlive: 0
+  explosionFx: {fileID: 3181322079014827040, guid: 93f8a3c6a3d5e3146b1825e2ee094118, type: 3}
+  healthBar: {fileID: 0}
 --- !u!1 &3912698467990097936
 GameObject:
   m_ObjectHideFlags: 0

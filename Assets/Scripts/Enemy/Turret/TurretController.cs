@@ -5,7 +5,7 @@ using UnityEngine;
 public class TurretController : MonoBehaviour
 {
     [SerializeField] int hp;
-
+    public GameObject explosionFx;
     public int getHP()
     {
         return this.hp;
@@ -18,6 +18,8 @@ public class TurretController : MonoBehaviour
             hp -= 10;
             if (hp <= 0)
             {
+                GameObject explo = Instantiate(explosionFx, transform.position, Quaternion.identity);
+                Destroy(explo, 2f);
                 Destroy(gameObject);
             }
             

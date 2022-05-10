@@ -8,12 +8,12 @@ public class Gunner : MonoBehaviour
     private GameObject groundScale;
     private Rigidbody rb;
     private Vector3 moveDir;
-    private PlayerController playerController;
 
     [SerializeField] int hp;
     [SerializeField] float moveSpeed;
     public float timer;
 
+    public GameObject explosionFx;
 
     public int getHP()
     {
@@ -24,24 +24,26 @@ public class Gunner : MonoBehaviour
     {
         playerPos = GameObject.FindWithTag("Player").GetComponent<Transform>();
         groundScale = GameObject.FindWithTag("Ground");
-        playerController = FindObjectOfType<PlayerController>();
         rb = GetComponent<Rigidbody>();
         
     }
     private void Update()
     {
-        if(playerController.isAlive)
-        {
-            lookAtPlayer();
-            
-        }
+        lookAtPlayer();
         movement();
-
     }
 
     void lookAtPlayer()
     {
-        transform.LookAt(playerPos);
+        if (PlayerController.instance.isAlive)
+        {
+            transform.LookAt(playerPos);
+        } else
+        {
+            
+            transform.LookAt(-moveDir);
+        }
+            
     }
 
     void movement()
@@ -81,7 +83,7 @@ public class Gunner : MonoBehaviour
 
     void movingState()
     {
-        if(playerController.isAlive)
+        if(PlayerController.instance.isAlive)
         {
             float disToPlayer = Vector3.Distance(transform.position, playerPos.position);
             if (disToPlayer < 150f)
@@ -95,7 +97,8 @@ public class Gunner : MonoBehaviour
         }
         else
         {
-            moveDir = Vector3.zero;
+            randomMoving();
+            //moveDir = Vector3.zero;
         }
     }
 
@@ -119,6 +122,8 @@ public class Gunner : MonoBehaviour
             hp -= 10;
             if (hp <= 0)
             {
+                GameObject explo = Instantiate(explosionFx, transform.position, Quaternion.identity);
+                Destroy(explo, 2f);
                 Destroy(gameObject);
             }
         }

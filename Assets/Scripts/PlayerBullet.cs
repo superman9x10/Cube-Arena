@@ -9,7 +9,7 @@ public class PlayerBullet : MonoBehaviour
     public float speed;
     private void Start()
     {
-        gunController = GameObject.FindWithTag("PlayerGun").GetComponent<GunController>();
+        gunController = GunController.instance.GetComponent<GunController>();
         m_rb.AddForce(gunController.fireDirection * speed, ForceMode.Impulse);
         Destroy(gameObject, 1f);
     }

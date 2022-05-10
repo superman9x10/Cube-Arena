@@ -11,7 +11,6 @@ GameObject:
   - component: {fileID: 3544764099039066850}
   - component: {fileID: 5135263583060622876}
   - component: {fileID: 6709900432912067407}
-  - component: {fileID: 4804554392784175508}
   - component: {fileID: 255246266}
   m_Layer: 0
   m_Name: Gun4
@@ -84,19 +83,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!65 &4804554392784175508
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 229813741254707640}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!120 &255246266
 LineRenderer:
   m_ObjectHideFlags: 0
@@ -219,7 +205,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1850865930488760846}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0.6}
+  m_LocalPosition: {x: 0, y: 0, z: 0.5}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 3544764099039066850}
@@ -249,7 +235,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2395935984311218515}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0, y: 0, z: 0.6}
+  m_LocalPosition: {x: -0, y: 0, z: 0.5}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 3389859891194291434}
@@ -354,8 +340,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Size: {x: 1.76742, y: 1, z: 1.9079288}
+  m_Center: {x: -0.057879925, y: 0, z: -0.073448375}
 --- !u!114 &1701147473
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -369,7 +355,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hp: 100
-  soundManager: {fileID: 6643685737209639141}
+  explosionFx: {fileID: 8996008984512165151, guid: 502cada8571709843ba829d13416023d, type: 3}
 --- !u!54 &-1172227637288705611
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -397,7 +383,6 @@ GameObject:
   - component: {fileID: 3389859891194291434}
   - component: {fileID: 8295578512562086296}
   - component: {fileID: 8737322078918099541}
-  - component: {fileID: 9151497869916681226}
   - component: {fileID: 264548623}
   m_Layer: 0
   m_Name: Gun3
@@ -470,19 +455,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!65 &9151497869916681226
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3847012192010790067}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!120 &264548623
 LineRenderer:
   m_ObjectHideFlags: 0
@@ -605,7 +577,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4172373267815068543}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0.597}
+  m_LocalPosition: {x: 0, y: 0, z: 0.5}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 9015652830722435312}
@@ -622,7 +594,6 @@ GameObject:
   - component: {fileID: 1461582456002679009}
   - component: {fileID: 4369043784137763235}
   - component: {fileID: 4114999800208853470}
-  - component: {fileID: 3270471687336369490}
   m_Layer: 0
   m_Name: Foot
   m_TagString: Untagged
@@ -693,19 +664,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!65 &3270471687336369490
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4413338890887150687}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &5376625088983064615
 GameObject:
   m_ObjectHideFlags: 0
@@ -717,7 +675,6 @@ GameObject:
   - component: {fileID: 6845053386482190344}
   - component: {fileID: 8575051495754444280}
   - component: {fileID: 3884923255982182627}
-  - component: {fileID: 5662646512610732231}
   - component: {fileID: 1059818164}
   m_Layer: 0
   m_Name: Gun2
@@ -790,19 +747,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!65 &5662646512610732231
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5376625088983064615}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!120 &1059818164
 LineRenderer:
   m_ObjectHideFlags: 0
@@ -1039,7 +983,6 @@ GameObject:
   - component: {fileID: 5630069959777571031}
   - component: {fileID: 4911267521582256674}
   - component: {fileID: 7645042965734127342}
-  - component: {fileID: 9196011801815237137}
   m_Layer: 0
   m_Name: Body
   m_TagString: Untagged
@@ -1110,19 +1053,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!65 &9196011801815237137
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6991021389781234542}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &7035321814944814250
 GameObject:
   m_ObjectHideFlags: 0
@@ -1147,7 +1077,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7035321814944814250}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0.675}
+  m_LocalPosition: {x: 0, y: 0, z: 0.5}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 6845053386482190344}
@@ -1164,7 +1094,6 @@ GameObject:
   - component: {fileID: 8186695292449738774}
   - component: {fileID: 7395062053399720198}
   - component: {fileID: 6199523645097353183}
-  - component: {fileID: 4622352152614070665}
   - component: {fileID: 4279987227285116102}
   m_Layer: 0
   m_Name: Gun
@@ -1240,19 +1169,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!65 &4622352152614070665
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8248421448455800381}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &4279987227285116102
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1287,7 +1203,6 @@ GameObject:
   - component: {fileID: 9015652830722435312}
   - component: {fileID: 2957918785405967209}
   - component: {fileID: 2576977150198172848}
-  - component: {fileID: 4865955980594092708}
   - component: {fileID: 1689117488}
   m_Layer: 0
   m_Name: Gun1
@@ -1360,19 +1275,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!65 &4865955980594092708
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8956413268238450011}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!120 &1689117488
 LineRenderer:
   m_ObjectHideFlags: 0

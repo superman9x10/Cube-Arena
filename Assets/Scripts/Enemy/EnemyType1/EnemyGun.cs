@@ -35,6 +35,8 @@ public class EnemyGun : MonoBehaviour
 
     void Shoot()
     {
+        if(PlayerController.instance.isAlive)
+        {
             if (Time.time > canShootAfter)
             {
                 if (swapGun == 0)
@@ -50,6 +52,7 @@ public class EnemyGun : MonoBehaviour
 
                 canShootAfter = Time.time + 1 / fireRate;
             }
+        }
     }
 
     void CreateBul(Transform firePoint)

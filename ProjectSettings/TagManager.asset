@@ -10,6 +10,8 @@ TagManager:
   - EnemyBullet
   - PlayerBullet
   - Enemy
+  - DeadZone
+  - PlayerShield
   layers:
   - Default
   - TransparentFX

@@ -2,10 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Gunner : MonoBehaviour
+public class Gunner : MovingEntity, IDamageable
 {
     private Transform playerPos;
-    private GameObject groundScale;
     private Rigidbody rb;
     private Vector3 moveDir;
 
@@ -22,8 +21,7 @@ public class Gunner : MonoBehaviour
     //public AudioSource audioSource;
     private void Start()
     {
-        playerPos = GameObject.FindWithTag("Player").GetComponent<Transform>();
-        groundScale = GameObject.FindWithTag("Ground");
+        playerPos = PlayerController.instance.transform;
         rb = GetComponent<Rigidbody>();
         
     }
@@ -50,35 +48,7 @@ public class Gunner : MonoBehaviour
     {
         movingState();
         rb.velocity = moveDir * moveSpeed;
-        limitMoving();
-    }
-
-    void limitMoving()
-    {
-        float scaleX = groundScale.transform.localScale.x;
-        float scaleZ = groundScale.transform.localScale.z;
-
-        Vector3 temp = transform.position;
-
-        if (temp.x > (scaleX - 20) / 2)
-        {
-            temp.x = (scaleX - 20) / 2;
-        }
-        else if (temp.x < (-scaleX + 20) / 2)
-        {
-            temp.x = (-scaleX + 20) / 2;
-        }
-
-        if (temp.z > (scaleZ + 20) / 2)
-        {
-            temp.z = (scaleZ + 20) / 2;
-        }
-        else if (temp.z < (-scaleZ + 70) / 2)
-        {
-            temp.z = (-scaleZ + 70) / 2;
-        }
-
-        transform.position = temp;
+        limitMoving(this.transform);
     }
 
     void movingState()
@@ -118,14 +88,23 @@ public class Gunner : MonoBehaviour
         if (other.tag == "PlayerBullet")
         {
             Destroy(other.gameObject);
-            
-            hp -= 10;
+
+            Damageable(PlayerController.instance.getPlayerDamage());
             if (hp <= 0)
             {
+                ScoreUI.instance.setScore(1 / Spawner.instance.timeFinishWave * 1000);
+
                 GameObject explo = Instantiate(explosionFx, transform.position, Quaternion.identity);
                 Destroy(explo, 2f);
                 Destroy(gameObject);
             }
         }
+    }
+
+
+    //interface
+    public void Damageable(int damage)
+    {
+        this.hp -= damage;
     }
 }

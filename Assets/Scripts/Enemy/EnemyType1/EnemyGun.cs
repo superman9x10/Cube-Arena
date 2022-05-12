@@ -16,6 +16,8 @@ public class EnemyGun : MonoBehaviour
     private int swapGun;
     private float randNum = 3f;
 
+
+
     private void Update()
     {
         timer -= Time.deltaTime;
@@ -57,9 +59,19 @@ public class EnemyGun : MonoBehaviour
 
     void CreateBul(Transform firePoint)
     {
-        GameObject bull = (GameObject)Instantiate(bullet, firePoint.position, Quaternion.identity);
-        Rigidbody bul_rb = bull.GetComponent<Rigidbody>();
-        bul_rb.AddForce(firePoint.forward * bulletSpeed, ForceMode.Impulse);
-        Destroy(bull, 1f);
+        //GameObject bull = (GameObject)Instantiate(bullet, firePoint.position, Quaternion.identity);
+        //Rigidbody bul_rb = bull.GetComponent<Rigidbody>();
+        //bul_rb.AddForce(firePoint.forward * bulletSpeed, ForceMode.Impulse);
+        //Destroy(bull, 1f);
+
+        GameObject bul = PoolingObject.instance.GetPoolingObject();
+        if (bul != null)
+        {
+            bul.transform.position = firePoint.position;
+            bul.transform.rotation = Quaternion.identity;
+
+            bul.GetComponent<GunnerBul>().dirToFire = firePoint.forward;
+            bul.SetActive(true);
+        }
     }
 }

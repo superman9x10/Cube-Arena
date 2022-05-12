@@ -78,10 +78,8 @@ public class TurretGunController : MonoBehaviour
 
     void shootLaser(LineRenderer line, Vector3 originPos, Vector3 direction)
     {
-        checkHitPlayer(originPos, direction);
-        hitDelay();
 
-        if(PlayerController.instance.isAlive)
+        if (PlayerController.instance.isAlive)
         {
             drawLaser(line, originPos, direction * 1000f);
         } else
@@ -92,9 +90,11 @@ public class TurretGunController : MonoBehaviour
             }
         }
 
+        checkHitPlayer(line, originPos, direction);
+        hitDelay();
     }
 
-    void checkHitPlayer(Vector3 originPos, Vector3 direction)
+    void checkHitPlayer(LineRenderer line, Vector3 originPos, Vector3 direction)
     {
         RaycastHit hit;
         if (Physics.Raycast(originPos, direction, out hit) && !isHitPlayer)
@@ -102,7 +102,11 @@ public class TurretGunController : MonoBehaviour
             if (hit.collider.tag == "Player")
             {
                 isHitPlayer = true;
-                PlayerController.instance.damagePlayer(10);
+                PlayerController.instance.Damageable(5);
+            }
+            if(hit.collider.tag == "PlayerShield")
+            {
+                drawLaser(line, originPos, hit.point);
             }
         }
     }
@@ -115,7 +119,7 @@ public class TurretGunController : MonoBehaviour
             if (timer <= 0)
             {
                 isHitPlayer = false;
-                timer = 0.2f;
+                timer = 0.1f;
             }
         }
     }

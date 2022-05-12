@@ -2,11 +2,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 [System.Serializable]
 public class Wave
 {
-    public int totalEnemy;
+    public int value;
     public List<enemy> enemiesList = new List<enemy>();
 }
 
@@ -14,7 +15,7 @@ public class Wave
 public class enemy
 {
     public GameObject enemyPrefab;
-    public int amount;
+    public int cost;
 }
 
 public class Spawner : MonoBehaviour
@@ -36,20 +37,40 @@ public class Spawner : MonoBehaviour
     public Text coutingText;
     private bool isStartCout = true;
 
+    public bool isNextWave()
+    {
+        return isStartCout;
+    }
+
     //the wave is playing
     private int curWave = 0;
+
+
+    //EndGame 
+
+    
+    public bool isEndGame;
+
+    //Time finish wave
+    public float timeFinishWave;
 
     public int getCurWave()
     {
         return this.curWave;
     }
-    private void Start()
+    private void Awake()
     {
-        if(instance == null)
+        if (instance == null)
         {
             instance = this;
         }
+        curWave = 0;
         timer = timeToNextWave;
+    }
+    private void Start()
+    {
+        
+        
     }
     private void Update()
     {
@@ -60,28 +81,36 @@ public class Spawner : MonoBehaviour
 
         checkEndGame();
 
-        if(timer <= 0)
+        if(!isEndGame)
         {
-            if (enemies.Count != wavesList[curWave].totalEnemy)
+            if (timer <= 0)
             {
-                generateEnemy(wavesList[curWave]);
+                //Playing time of this wave
+                timeFinishWave += Time.deltaTime;
+
+                if (wavesList[curWave].value != 0)
+                {
+                    generateEnemy(wavesList[curWave]);
+                }
+                else
+                {
+                    if (GameObject.FindWithTag("Enemy") == null)
+                    {
+                        curWave++;
+                        timer = timeToNextWave;
+                        enemies.Clear();
+                        isStartCout = true;
+
+                        timeFinishWave = 0;
+                    }
+                }
             }
             else
             {
-                if (GameObject.FindWithTag("Enemy") == null)
-                {
-                    curWave++;
-                    timer = timeToNextWave;
-                    enemies.Clear();
-                    isStartCout = true;
-                }
+                StartCoroutine(startCouting());
+                coutingText.text = timer.ToString("0.00");
+                timer -= Time.deltaTime;
             }
-        }
-        else
-        {
-            StartCoroutine(startCouting());
-            coutingText.text = timer.ToString("0.00");
-            timer -= Time.deltaTime;
         }
         
     }
@@ -89,14 +118,15 @@ public class Spawner : MonoBehaviour
     void generateEnemy(Wave m_wave)
     {
         int randEnemy = Random.Range(0, m_wave.enemiesList.Count);
-        if (m_wave.enemiesList[randEnemy].amount > 0)
+
+        if(m_wave.enemiesList[randEnemy].cost <= m_wave.value)
         {
             GameObject enemy = m_wave.enemiesList[randEnemy].enemyPrefab;
 
             enemies.Add(enemy);
             Instantiate(enemy, randPos(), Quaternion.identity);
 
-            m_wave.enemiesList[randEnemy].amount--;
+            m_wave.value -= m_wave.enemiesList[randEnemy].cost;
         }
     }
 
@@ -113,11 +143,10 @@ public class Spawner : MonoBehaviour
 
     void checkEndGame()
     {
-        if (curWave == wavesList.Count)
+        if (curWave == wavesList.Count || !PlayerController.instance.isAlive)
         {
-            Debug.Log("END GAME");
-            
-        }
+            isEndGame = true;
+        }  
     }
 
     IEnumerator startCouting()

@@ -61,6 +61,7 @@
     <Compile Include="Assets\Scripts\Item\Item.cs" />
     <Compile Include="Assets\Scripts\UI\waveUI.cs" />
     <Compile Include="Assets\Scripts\UI\ScoreUI.cs" />
+    <Compile Include="Assets\Scripts\UI\PauseUI.cs" />
     <Compile Include="Assets\Scripts\Player\Shield\PlayerShield.cs" />
     <Compile Include="Assets\Scripts\Player\PlayerBullet.cs" />
     <Compile Include="Assets\Scripts\Item\Health\HealthItem.cs" />
@@ -78,7 +79,8 @@
     <Compile Include="Assets\Scripts\Enemy\Turret\TurretController.cs" />
     <Compile Include="Assets\Scripts\Player\GunController.cs" />
     <Compile Include="Assets\Scripts\Interface\IDamageable.cs" />
-    <Compile Include="Assets\Scripts\UI\PauseUI.cs" />
+    <Compile Include="Assets\Scripts\VolSetting.cs" />
+    <Compile Include="Assets\VolController.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\Font\LICENSE.txt" />

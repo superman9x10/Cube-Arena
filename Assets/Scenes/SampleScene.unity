@@ -450,10 +450,10 @@ RectTransform:
   m_Father: {fileID: 419581778}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 281}
-  m_SizeDelta: {x: 256.8992, y: 48.16858}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: 0, y: -199}
+  m_SizeDelta: {x: 0, y: 48.16858}
   m_Pivot: {x: 0.5, y: 1}
 --- !u!114 &85707996
 MonoBehaviour:
@@ -1365,10 +1365,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0cd44c1031e13a943bb63640046fad76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_UiScaleMode: 0
+  m_UiScaleMode: 1
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
-  m_ReferenceResolution: {x: 800, y: 600}
+  m_ReferenceResolution: {x: 1920, y: 1080}
   m_ScreenMatchMode: 0
   m_MatchWidthOrHeight: 0
   m_PhysicalUnit: 3
@@ -8063,10 +8063,10 @@ RectTransform:
   m_Father: {fileID: 1952462737}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 330}
-  m_SizeDelta: {x: 1000, y: 500}
+  m_SizeDelta: {x: -920, y: -580}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1137435305
 MonoBehaviour:
@@ -13544,64 +13544,8 @@ MonoBehaviour:
       cost: 1
     - enemyPrefab: {fileID: 3793010299751268836, guid: 3a01c5de3446f4340835276326b0e411, type: 3}
       cost: 2
-  - value: 21
-    enemiesList:
-    - enemyPrefab: {fileID: 1391277988064175446, guid: 62301eca36af4fa478e52076b7760204, type: 3}
-      cost: 1
-    - enemyPrefab: {fileID: 3793010299751268836, guid: 3a01c5de3446f4340835276326b0e411, type: 3}
-      cost: 3
-  - value: 20
-    enemiesList:
-    - enemyPrefab: {fileID: 1391277988064175446, guid: 62301eca36af4fa478e52076b7760204, type: 3}
-      cost: 1
-    - enemyPrefab: {fileID: 3793010299751268836, guid: 3a01c5de3446f4340835276326b0e411, type: 3}
-      cost: 2
-  - value: 15
-    enemiesList:
-    - enemyPrefab: {fileID: 1391277988064175446, guid: 62301eca36af4fa478e52076b7760204, type: 3}
-      cost: 1
-  - value: 16
-    enemiesList:
-    - enemyPrefab: {fileID: 3793010299751268836, guid: 3a01c5de3446f4340835276326b0e411, type: 3}
-      cost: 2
-  - value: 15
-    enemiesList:
-    - enemyPrefab: {fileID: 1391277988064175446, guid: 62301eca36af4fa478e52076b7760204, type: 3}
-      cost: 1
-    - enemyPrefab: {fileID: 3793010299751268836, guid: 3a01c5de3446f4340835276326b0e411, type: 3}
-      cost: 3
-  - value: 20
-    enemiesList:
-    - enemyPrefab: {fileID: 1391277988064175446, guid: 62301eca36af4fa478e52076b7760204, type: 3}
-      cost: 1
-    - enemyPrefab: {fileID: 3793010299751268836, guid: 3a01c5de3446f4340835276326b0e411, type: 3}
-      cost: 3
-  - value: 15
-    enemiesList:
-    - enemyPrefab: {fileID: 1391277988064175446, guid: 62301eca36af4fa478e52076b7760204, type: 3}
-      cost: 1
-    - enemyPrefab: {fileID: 3793010299751268836, guid: 3a01c5de3446f4340835276326b0e411, type: 3}
-      cost: 2
-  - value: 15
-    enemiesList:
-    - enemyPrefab: {fileID: 1391277988064175446, guid: 62301eca36af4fa478e52076b7760204, type: 3}
-      cost: 1
-    - enemyPrefab: {fileID: 3793010299751268836, guid: 3a01c5de3446f4340835276326b0e411, type: 3}
-      cost: 2
-  - value: 15
-    enemiesList:
-    - enemyPrefab: {fileID: 1391277988064175446, guid: 62301eca36af4fa478e52076b7760204, type: 3}
-      cost: 1
-    - enemyPrefab: {fileID: 3793010299751268836, guid: 3a01c5de3446f4340835276326b0e411, type: 3}
-      cost: 2
-  - value: 15
-    enemiesList:
-    - enemyPrefab: {fileID: 1391277988064175446, guid: 62301eca36af4fa478e52076b7760204, type: 3}
-      cost: 1
-    - enemyPrefab: {fileID: 3793010299751268836, guid: 3a01c5de3446f4340835276326b0e411, type: 3}
-      cost: 1
   enemies: []
-  timeToNextWave: 5
+  timeToNextWave: 3
   timeToNextWaveManager: {fileID: 85707994}
   coutingText: {fileID: 1438764909}
   isEndGame: 0
@@ -19785,8 +19729,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: -0.5}
+  m_SizeDelta: {x: 0, y: -1}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &2014949162
 GameObject:
@@ -20004,10 +19948,10 @@ RectTransform:
   m_Father: {fileID: 1971998866}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0.5}
-  m_AnchorMax: {x: 0, y: 0.5}
-  m_AnchoredPosition: {x: 297, y: 0}
-  m_SizeDelta: {x: 1920, y: 100}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: -725, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2044340988
 MonoBehaviour:

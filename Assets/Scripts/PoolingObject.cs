@@ -2,12 +2,19 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+[System.Serializable]
+public class itemToPools
+{
+    public int amount;
+    public GameObject item;
+    public bool shouldExpand;
+}
+
 public class PoolingObject : MonoBehaviour
 {
     public static PoolingObject instance;
-    public int amoutToPool;
-    public GameObject objectPrefab;
-    public bool shouldExpand;
+    
+    public List<itemToPools> itemToPoolList = new List<itemToPools>();
     public List<GameObject> prefabs = new List<GameObject>();
 
     private void Awake()
@@ -25,31 +32,40 @@ public class PoolingObject : MonoBehaviour
 
     void CreatePooling()
     {
-        for (int i = 0; i < amoutToPool; i++)
+        foreach(itemToPools itemToPool in itemToPoolList)
         {
-            GameObject obj = Instantiate(objectPrefab);
-            obj.SetActive(false);
-            prefabs.Add(obj);
+            for (int i = 0; i < itemToPool.amount; i++)
+            {
+                GameObject obj = Instantiate(itemToPool.item);
+                obj.SetActive(false);
+                prefabs.Add(obj);
+            }
         }
     }
 
-    public GameObject GetPoolingObject()
+    public GameObject GetPoolingObject(string tagName)
     {
         for(int i = 0; i < prefabs.Count; i++)
         {
-            if(!prefabs[i].activeInHierarchy)
+            if(!prefabs[i].activeInHierarchy && prefabs[i].tag == tagName)
             {
                 return prefabs[i];
             }
             
         }
 
-        if (shouldExpand)
+        foreach(itemToPools itemToPool in itemToPoolList)
         {
-            GameObject obj = (GameObject)Instantiate(objectPrefab);
-            obj.SetActive(false);
-            prefabs.Add(obj);
-            return obj;
+            if(itemToPool.item.tag == tagName)
+            {
+                if (itemToPool.shouldExpand)
+                {
+                    GameObject obj = (GameObject)Instantiate(itemToPool.item);
+                    obj.SetActive(false);
+                    prefabs.Add(obj);
+                    return obj;
+                }
+            }
         }
 
         return null;

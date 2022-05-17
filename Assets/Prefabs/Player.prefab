@@ -753,7 +753,7 @@ Rigidbody:
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 116
-  m_CollisionDetection: 3
+  m_CollisionDetection: 1
 --- !u!114 &1670726254
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -767,12 +767,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 150
-  hp: 500
+  hp: 400
+  playerDamage: 20
   isAlive: 0
   explosionFx: {fileID: 3181322079014827040, guid: 93f8a3c6a3d5e3146b1825e2ee094118, type: 3}
   healthBar: {fileID: 0}
   playerShield: {fileID: 3691783024831477097, guid: 4ff63af3668e9aa4d8ba88a656bdb1aa, type: 3}
-  timer: 0
 --- !u!1 &3912698467990097936
 GameObject:
   m_ObjectHideFlags: 0

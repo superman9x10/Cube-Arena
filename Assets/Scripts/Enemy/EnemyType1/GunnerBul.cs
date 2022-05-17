@@ -23,6 +23,10 @@ public class GunnerBul : MonoBehaviour
     {
         if(other.tag == "Player" || other.tag == "PlayerShield")
         {
+            if (other.tag == "Player")
+            {
+                PlayerController.instance.Damageable(10);
+            }
             this.gameObject.GetComponent<TrailRenderer>().Clear();
             this.gameObject.SetActive(false);
         }

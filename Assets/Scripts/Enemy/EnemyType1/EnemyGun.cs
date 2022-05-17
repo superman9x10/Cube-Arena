@@ -9,10 +9,9 @@ public class EnemyGun : MonoBehaviour
     public GameObject bullet;
 
     public float fireRate;
-    public float canShootAfter;
-    public float bulletSpeed;
     public float timer;
 
+    private float canShootAfter;
     private int swapGun;
     private float randNum = 3f;
 
@@ -64,7 +63,7 @@ public class EnemyGun : MonoBehaviour
         //bul_rb.AddForce(firePoint.forward * bulletSpeed, ForceMode.Impulse);
         //Destroy(bull, 1f);
 
-        GameObject bul = PoolingObject.instance.GetPoolingObject();
+        GameObject bul = PoolingObject.instance.GetPoolingObject("EnemyBullet");
         if (bul != null)
         {
             bul.transform.position = firePoint.position;

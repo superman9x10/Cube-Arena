@@ -419,9 +419,7 @@ MonoBehaviour:
   firePoint1: {fileID: 1688384109459204540}
   firePoint2: {fileID: 194575883652484797}
   bullet: {fileID: 1194291658390149231, guid: e6af57b7e60aa844fa2a3200ece32cd3, type: 3}
-  fireRate: 7
-  canShootAfter: 0
-  bulletSpeed: 50
+  fireRate: 4
   timer: 4
 --- !u!1 &4383482990397128342
 GameObject:

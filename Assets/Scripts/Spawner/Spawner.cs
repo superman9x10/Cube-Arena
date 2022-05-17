@@ -23,6 +23,7 @@ public class Spawner : MonoBehaviour
     public static Spawner instance;
     
     public GameObject groundScale;
+    public bool startGame;
     
     //Create waves and enemies List
     public List<Wave> wavesList = new List<Wave>();
@@ -67,14 +68,12 @@ public class Spawner : MonoBehaviour
         curWave = 0;
         timer = timeToNextWave;
     }
-    private void Start()
-    {
-        
-        
-    }
     private void Update()
     {
-        spawnEnemy();
+        if(startGame)
+        {
+            spawnEnemy();
+        }
     }
     void spawnEnemy()
     {

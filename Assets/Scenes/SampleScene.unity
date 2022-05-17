@@ -13487,6 +13487,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   groundScale: {fileID: 1660300844253534215}
+  startGame: 1
   wavesList:
   - value: 5
     enemiesList:
@@ -13507,45 +13508,49 @@ MonoBehaviour:
     - enemyPrefab: {fileID: 1391277988064175446, guid: 62301eca36af4fa478e52076b7760204, type: 3}
       cost: 1
     - enemyPrefab: {fileID: 3793010299751268836, guid: 3a01c5de3446f4340835276326b0e411, type: 3}
-      cost: 3
-  - value: 10
-    enemiesList:
-    - enemyPrefab: {fileID: 1391277988064175446, guid: 62301eca36af4fa478e52076b7760204, type: 3}
-      cost: 1
-    - enemyPrefab: {fileID: 3793010299751268836, guid: 3a01c5de3446f4340835276326b0e411, type: 3}
-      cost: 4
-  - value: 10
-    enemiesList:
-    - enemyPrefab: {fileID: 1391277988064175446, guid: 62301eca36af4fa478e52076b7760204, type: 3}
-      cost: 1
-    - enemyPrefab: {fileID: 3793010299751268836, guid: 3a01c5de3446f4340835276326b0e411, type: 3}
       cost: 2
-  - value: 10
+  - value: 20
     enemiesList:
     - enemyPrefab: {fileID: 1391277988064175446, guid: 62301eca36af4fa478e52076b7760204, type: 3}
       cost: 1
-    - enemyPrefab: {fileID: 3793010299751268836, guid: 3a01c5de3446f4340835276326b0e411, type: 3}
-      cost: 3
-  - value: 15
+    - enemyPrefab: {fileID: 1761796040558368198, guid: cb0095b4176383a4eaeee1f79a3a9288, type: 3}
+      cost: 4
+  - value: 20
     enemiesList:
-    - enemyPrefab: {fileID: 1391277988064175446, guid: 62301eca36af4fa478e52076b7760204, type: 3}
-      cost: 1
-    - enemyPrefab: {fileID: 3793010299751268836, guid: 3a01c5de3446f4340835276326b0e411, type: 3}
-      cost: 3
-  - value: 18
-    enemiesList:
-    - enemyPrefab: {fileID: 1391277988064175446, guid: 62301eca36af4fa478e52076b7760204, type: 3}
-      cost: 1
-    - enemyPrefab: {fileID: 3793010299751268836, guid: 3a01c5de3446f4340835276326b0e411, type: 3}
-      cost: 3
+    - enemyPrefab: {fileID: 1761796040558368198, guid: cb0095b4176383a4eaeee1f79a3a9288, type: 3}
+      cost: 4
   - value: 20
     enemiesList:
     - enemyPrefab: {fileID: 1391277988064175446, guid: 62301eca36af4fa478e52076b7760204, type: 3}
       cost: 1
     - enemyPrefab: {fileID: 3793010299751268836, guid: 3a01c5de3446f4340835276326b0e411, type: 3}
+      cost: 3
+    - enemyPrefab: {fileID: 1761796040558368198, guid: cb0095b4176383a4eaeee1f79a3a9288, type: 3}
+      cost: 3
+  - value: 20
+    enemiesList:
+    - enemyPrefab: {fileID: 1391277988064175446, guid: 62301eca36af4fa478e52076b7760204, type: 3}
+      cost: 2
+    - enemyPrefab: {fileID: 1761796040558368198, guid: cb0095b4176383a4eaeee1f79a3a9288, type: 3}
+      cost: 2
+  - value: 20
+    enemiesList:
+    - enemyPrefab: {fileID: 1391277988064175446, guid: 62301eca36af4fa478e52076b7760204, type: 3}
+      cost: 1
+    - enemyPrefab: {fileID: 3793010299751268836, guid: 3a01c5de3446f4340835276326b0e411, type: 3}
+      cost: 3
+    - enemyPrefab: {fileID: 1761796040558368198, guid: cb0095b4176383a4eaeee1f79a3a9288, type: 3}
+      cost: 3
+  - value: 20
+    enemiesList:
+    - enemyPrefab: {fileID: 1391277988064175446, guid: 62301eca36af4fa478e52076b7760204, type: 3}
+      cost: 1
+    - enemyPrefab: {fileID: 1761796040558368198, guid: cb0095b4176383a4eaeee1f79a3a9288, type: 3}
+      cost: 2
+    - enemyPrefab: {fileID: 3793010299751268836, guid: 3a01c5de3446f4340835276326b0e411, type: 3}
       cost: 2
   enemies: []
-  timeToNextWave: 3
+  timeToNextWave: 5
   timeToNextWaveManager: {fileID: 85707994}
   coutingText: {fileID: 1438764909}
   isEndGame: 0
@@ -19236,17 +19241,9 @@ PrefabInstance:
       propertyPath: healthBar
       value: 
       objectReference: {fileID: 169028487}
-    - target: {fileID: 1670726254, guid: 3b0e0be50600dc743be3d92b385dc99a, type: 3}
-      propertyPath: playerDamage
-      value: 20
-      objectReference: {fileID: 0}
     - target: {fileID: 3430491101961922517, guid: 3b0e0be50600dc743be3d92b385dc99a, type: 3}
       propertyPath: m_Name
       value: Player
-      objectReference: {fileID: 0}
-    - target: {fileID: 3430491101961922517, guid: 3b0e0be50600dc743be3d92b385dc99a, type: 3}
-      propertyPath: m_IsActive
-      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4616057435064236189, guid: 3b0e0be50600dc743be3d92b385dc99a, type: 3}
       propertyPath: m_RootOrder
@@ -19515,9 +19512,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: df47cb3f96f8e064e81a6a1d5998c701, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  amoutToPool: 100
-  objectPrefab: {fileID: 1194291658390149231, guid: e6af57b7e60aa844fa2a3200ece32cd3, type: 3}
-  shouldExpand: 1
+  itemToPoolList:
+  - amount: 50
+    item: {fileID: 1194291658390149231, guid: e6af57b7e60aa844fa2a3200ece32cd3, type: 3}
+    shouldExpand: 1
+  - amount: 50
+    item: {fileID: 1513608856812206106, guid: 41b4eb6c50e7e7f40af23f9d45ec947b, type: 3}
+    shouldExpand: 1
   prefabs: []
 --- !u!4 &1925113302
 Transform:

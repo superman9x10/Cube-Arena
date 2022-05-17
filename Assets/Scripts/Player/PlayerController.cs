@@ -18,9 +18,6 @@ public class PlayerController : MovingEntity, IDamageable, IHealingable
     public bool isAlive;
 
     public GameObject explosionFx;
-
-
-    
     public int getPlayerHP()
     {
         return this.hp;
@@ -129,16 +126,6 @@ public class PlayerController : MovingEntity, IDamageable, IHealingable
         }
     }
 
-    private void OnTriggerEnter(Collider other)
-    {
-        if(other.tag == "EnemyBullet")
-        {
-            Damageable(10);
-            //healthBar.setHealth(hp);
-            //playerDead();
-            other.gameObject.SetActive(false);
-        }
-    }
 
     //Interface
     public void Damageable(int damage)

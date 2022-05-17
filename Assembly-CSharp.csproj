@@ -53,6 +53,7 @@
     <UnityVersion>2020.3.24f1</UnityVersion>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="Assets\Scripts\VolSetting.cs" />
     <Compile Include="Assets\Scripts\Spawner\Spawner.cs" />
     <Compile Include="Assets\Scripts\Spawner\ItemSpawner.cs" />
     <Compile Include="Assets\Scripts\UI\MenuController.cs" />
@@ -61,6 +62,7 @@
     <Compile Include="Assets\Scripts\Item\Item.cs" />
     <Compile Include="Assets\Scripts\UI\waveUI.cs" />
     <Compile Include="Assets\Scripts\UI\ScoreUI.cs" />
+    <Compile Include="Assets\VolController.cs" />
     <Compile Include="Assets\Scripts\UI\PauseUI.cs" />
     <Compile Include="Assets\Scripts\Player\Shield\PlayerShield.cs" />
     <Compile Include="Assets\Scripts\Player\PlayerBullet.cs" />
@@ -79,8 +81,6 @@
     <Compile Include="Assets\Scripts\Enemy\Turret\TurretController.cs" />
     <Compile Include="Assets\Scripts\Player\GunController.cs" />
     <Compile Include="Assets\Scripts\Interface\IDamageable.cs" />
-    <Compile Include="Assets\Scripts\VolSetting.cs" />
-    <Compile Include="Assets\VolController.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\Font\LICENSE.txt" />

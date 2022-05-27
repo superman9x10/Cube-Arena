@@ -285,9 +285,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hp: 50
-  moveSpeed: 50
-  timer: 0
+  damage: 10
   explosionFx: {fileID: 8996008984512165151, guid: 502cada8571709843ba829d13416023d, type: 3}
+  moveSpeed: 50
+  timeToRandomMoving: 0
 --- !u!1 &4383482990344016547
 GameObject:
   m_ObjectHideFlags: 0

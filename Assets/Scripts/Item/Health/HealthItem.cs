@@ -10,9 +10,9 @@ public class HealthItem : MonoBehaviour
     {
         if(other.tag == "Player")
         {
-            if (PlayerController.instance.getPlayerCurHP() + _healing >= PlayerController.instance.getPlayerHP())
+            if (PlayerController.instance.getPlayerCurHP() + _healing >= PlayerController.instance.getHP())
             {
-                PlayerController.instance.healing(PlayerController.instance.getPlayerHP() - PlayerController.instance.getPlayerCurHP());
+                PlayerController.instance.healing(PlayerController.instance.getHP() - PlayerController.instance.getPlayerCurHP());
             }
             else
             {

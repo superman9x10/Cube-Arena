@@ -22,6 +22,9 @@ ScriptsOnlyBuild:
     - Spawner
     - TurretController
     - TurretGunController
+    - Type2Bul
+    - Type2Controller
+    - Type2Gun
     - VolController
     - VolSetting
     - waveUI
@@ -200,23 +203,23 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 4546}
     - Class: 114
-      Script: {instanceID: 4624}
+      Script: {instanceID: 4626}
     - Class: 114
-      Script: {instanceID: 4748}
+      Script: {instanceID: 4752}
     - Class: 114
-      Script: {instanceID: 4946}
+      Script: {instanceID: 4950}
     - Class: 114
-      Script: {instanceID: 5446}
+      Script: {instanceID: 5450}
     - Class: 114
-      Script: {instanceID: 5632}
+      Script: {instanceID: 5636}
     - Class: 114
-      Script: {instanceID: 5690}
+      Script: {instanceID: 5694}
     - Class: 114
-      Script: {instanceID: 6134}
+      Script: {instanceID: 6138}
     - Class: 114
-      Script: {instanceID: 6186}
+      Script: {instanceID: 6190}
     - Class: 114
-      Script: {instanceID: 6598}
+      Script: {instanceID: 6604}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -329,31 +332,37 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 4270}
     - Class: 114
-      Script: {instanceID: 4710}
+      Script: {instanceID: 4550}
     - Class: 114
-      Script: {instanceID: 5034}
+      Script: {instanceID: 4712}
     - Class: 114
-      Script: {instanceID: 5144}
+      Script: {instanceID: 4744}
     - Class: 114
-      Script: {instanceID: 5146}
+      Script: {instanceID: 5038}
     - Class: 114
-      Script: {instanceID: 5416}
+      Script: {instanceID: 5148}
     - Class: 114
-      Script: {instanceID: 5576}
+      Script: {instanceID: 5150}
     - Class: 114
-      Script: {instanceID: 5608}
+      Script: {instanceID: 5420}
     - Class: 114
-      Script: {instanceID: 5880}
+      Script: {instanceID: 5580}
     - Class: 114
-      Script: {instanceID: 5896}
+      Script: {instanceID: 5612}
     - Class: 114
-      Script: {instanceID: 6396}
+      Script: {instanceID: 5884}
     - Class: 114
-      Script: {instanceID: 6432}
+      Script: {instanceID: 5900}
     - Class: 114
-      Script: {instanceID: 6614}
+      Script: {instanceID: 6400}
     - Class: 114
-      Script: {instanceID: 6616}
+      Script: {instanceID: 6420}
+    - Class: 114
+      Script: {instanceID: 6438}
+    - Class: 114
+      Script: {instanceID: 6620}
+    - Class: 114
+      Script: {instanceID: 6622}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 120
@@ -547,7 +556,7 @@ ScriptsOnlyBuild:
     className: VolSetting
   - hash:
       serializedVersion: 2
-      Hash: 29c66e6dd362016cf7e95dca668f0c1a
+      Hash: a987f7f56045d6fe8c082d0ee6567bb6
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: Spawner
@@ -967,6 +976,12 @@ ScriptsOnlyBuild:
     className: DebugUIHandlerRow
   - hash:
       serializedVersion: 2
+      Hash: 363a2c5eef05138d5266f0bbda04f281
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: Type2Gun
+  - hash:
+      serializedVersion: 2
       Hash: cbdaf6289eb255feedd0bee0a753faee
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
@@ -1001,6 +1016,12 @@ ScriptsOnlyBuild:
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: Ground
+  - hash:
+      serializedVersion: 2
+      Hash: 4e5fdd410b7ff76d1da210ae432a5be6
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: Type2Controller
   - hash:
       serializedVersion: 2
       Hash: 1f0602e7bad1e0a9cba31ce292eee8bb
@@ -1081,7 +1102,7 @@ ScriptsOnlyBuild:
     className: ColorAdjustments
   - hash:
       serializedVersion: 2
-      Hash: e158b383b278ef3e56562c335b2ed65e
+      Hash: 3965df7d0df63c092b4269bc61f9ca1e
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: EnemyGun
@@ -1129,7 +1150,7 @@ ScriptsOnlyBuild:
     className: UniversalAdditionalLightData
   - hash:
       serializedVersion: 2
-      Hash: 75bfc3b7fb8fdb3fb17d0e0c081b5299
+      Hash: 86eb0898dc2b2e255e3fa60722b2c24b
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: PoolingObject
@@ -1295,6 +1316,12 @@ ScriptsOnlyBuild:
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: PlayerController
+  - hash:
+      serializedVersion: 2
+      Hash: 7963ad64caaba1878d4b6bfa8bcc5359
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: Type2Bul
   - hash:
       serializedVersion: 2
       Hash: 8c328a0ffa03c1bcb9332bb39f4f8453

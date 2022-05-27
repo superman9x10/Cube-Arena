@@ -12,7 +12,7 @@ TagManager:
   - Enemy
   - DeadZone
   - PlayerShield
-  - Type2Bul
+  - TornadoBul
   layers:
   - Default
   - TransparentFX

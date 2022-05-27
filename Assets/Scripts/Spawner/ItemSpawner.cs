@@ -9,10 +9,7 @@ public class ItemSpawner : MonoBehaviour
 
     public float timerToSpawn;
     private float timer;
-    private void Start()
-    {
-        
-    }
+
     private void Update()
     {
         HealthSpawner();
@@ -53,7 +50,7 @@ public class ItemSpawner : MonoBehaviour
     {
         int randNum = 1;
         int playerCurHP = PlayerController.instance.getPlayerCurHP();
-        int playerHP = PlayerController.instance.getPlayerHP();
+        int playerHP = PlayerController.instance.getHP();
 
         if (playerCurHP <= playerHP * 90 / 100 && playerCurHP > playerHP * 80 / 100)
         {

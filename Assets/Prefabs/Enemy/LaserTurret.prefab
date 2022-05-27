@@ -355,6 +355,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hp: 150
+  damage: 10
   explosionFx: {fileID: 8996008984512165151, guid: 502cada8571709843ba829d13416023d, type: 3}
 --- !u!54 &-1172227637288705611
 Rigidbody:

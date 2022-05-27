@@ -13550,7 +13550,7 @@ MonoBehaviour:
     - enemyPrefab: {fileID: 3793010299751268836, guid: 3a01c5de3446f4340835276326b0e411, type: 3}
       cost: 2
   enemies: []
-  timeToNextWave: 5
+  timeToNextWave: 3
   timeToNextWaveManager: {fileID: 85707994}
   coutingText: {fileID: 1438764909}
   isEndGame: 0
@@ -19238,12 +19238,20 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 1670726254, guid: 3b0e0be50600dc743be3d92b385dc99a, type: 3}
+      propertyPath: damage
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 1670726254, guid: 3b0e0be50600dc743be3d92b385dc99a, type: 3}
       propertyPath: healthBar
       value: 
       objectReference: {fileID: 169028487}
     - target: {fileID: 3430491101961922517, guid: 3b0e0be50600dc743be3d92b385dc99a, type: 3}
       propertyPath: m_Name
       value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 3430491101961922517, guid: 3b0e0be50600dc743be3d92b385dc99a, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4616057435064236189, guid: 3b0e0be50600dc743be3d92b385dc99a, type: 3}
       propertyPath: m_RootOrder

@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [System.Serializable]
-public class itemToPools
+public class itemToPool
 {
     public int amount;
     public GameObject item;
@@ -14,7 +14,7 @@ public class PoolingObject : MonoBehaviour
 {
     public static PoolingObject instance;
     
-    public List<itemToPools> itemToPoolList = new List<itemToPools>();
+    public List<itemToPool> itemToPoolList = new List<itemToPool>();
     public List<GameObject> prefabs = new List<GameObject>();
 
     private void Awake()
@@ -32,7 +32,7 @@ public class PoolingObject : MonoBehaviour
 
     void CreatePooling()
     {
-        foreach(itemToPools itemToPool in itemToPoolList)
+        foreach(itemToPool itemToPool in itemToPoolList)
         {
             for (int i = 0; i < itemToPool.amount; i++)
             {
@@ -54,7 +54,7 @@ public class PoolingObject : MonoBehaviour
             
         }
 
-        foreach(itemToPools itemToPool in itemToPoolList)
+        foreach(itemToPool itemToPool in itemToPoolList)
         {
             if(itemToPool.item.tag == tagName)
             {
